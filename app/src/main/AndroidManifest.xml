@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="android.com.jumpco.io.swoosh">
+    package="android.com.jumpco.io.swoosh" >
 
     <application
         android:allowBackup="true"
@@ -8,19 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Swoosh">
+        android:theme="@style/Theme.Swoosh" >
         <activity
-            android:name=".SkillActivity"
+            android:name=".controller.FinishActivity"
             android:exported="false" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".controller.SkillActivity"
             android:exported="false" />
         <activity
-            android:name=".LeagueActivity"
+            android:name=".controller.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
-            android:exported="true">
+            android:name=".controller.LeagueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.WelcomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

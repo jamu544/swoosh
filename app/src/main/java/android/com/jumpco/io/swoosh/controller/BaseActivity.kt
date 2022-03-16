@@ -1,4 +1,4 @@
-package android.com.jumpco.io.swoosh
+package android.com.jumpco.io.swoosh.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

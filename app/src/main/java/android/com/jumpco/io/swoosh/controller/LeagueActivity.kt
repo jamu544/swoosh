@@ -1,5 +1,7 @@
-package android.com.jumpco.io.swoosh
+package android.com.jumpco.io.swoosh.controller
 
+import android.com.jumpco.io.swoosh.EXTRA_LEAGUE
+import android.com.jumpco.io.swoosh.R
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
