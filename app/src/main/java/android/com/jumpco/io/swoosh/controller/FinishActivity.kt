@@ -1,8 +1,9 @@
 package android.com.jumpco.io.swoosh.controller
 
-import android.com.jumpco.io.swoosh.EXTRA_LEAGUE
-import android.com.jumpco.io.swoosh.EXTRA_SKILL
+
+import android.com.jumpco.io.swoosh.EXTRA_PLAYER
 import android.com.jumpco.io.swoosh.R
+import android.com.jumpco.io.swoosh.model.Player
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_finish.*
@@ -12,9 +13,11 @@ class FinishActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
 
-        val league = intent.getStringExtra(EXTRA_LEAGUE)
-        val skill = intent.getStringExtra(EXTRA_SKILL)
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
 
-        searcLeagueText.text = "Looking for $league $skill league near you..."
+
+        if (player != null) {
+            searcLeagueText.text = "Looking for ${player.league} ${player.skill} league near you..."
+        }
     }
 }
