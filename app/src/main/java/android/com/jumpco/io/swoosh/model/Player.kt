@@ -1,4 +1,4 @@
-package android.com.jumpco.io.swoosh.model
+clapackage android.com.jumpco.io.swoosh.model
 
 import android.os.Parcel
 import android.os.Parcelable
