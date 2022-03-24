@@ -1,9 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+  }
 
-}
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdk 31
@@ -31,6 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+
+        buildFeatures {
+            viewBinding = true
+        }
 }
 
 dependencies {

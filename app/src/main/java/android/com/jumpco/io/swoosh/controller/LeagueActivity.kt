@@ -2,6 +2,8 @@ package android.com.jumpco.io.swoosh.controller
 
 import android.com.jumpco.io.swoosh.EXTRA_PLAYER
 import android.com.jumpco.io.swoosh.R
+import android.com.jumpco.io.swoosh.databinding.ActivityLeagueBinding
+import android.com.jumpco.io.swoosh.databinding.ActivitySkillBinding
 import android.com.jumpco.io.swoosh.model.Player
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +15,7 @@ class LeagueActivity : BaseActivity() {
 
     var player = Player("","")
 
+    private lateinit var binding: ActivityLeagueBinding
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -21,7 +24,8 @@ class LeagueActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_league)
+       binding = ActivityLeagueBinding.inflate(layoutInflater) //initializing the binding class
+        setContentView(binding.root)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -32,22 +36,22 @@ class LeagueActivity : BaseActivity() {
     }
 
     fun onMensClicked(view: View){
-        womensLeagueBtn.isChecked = false
-        coedLeagueBtn.isChecked = false
+        binding.womensLeagueBtn.isChecked = false
+        binding.coedLeagueBtn.isChecked = false
 
         player.league = "mens"
     }
 
     fun onWomensClicked(view: View) {
-        mensLeagueBtn.isChecked = false
-        coedLeagueBtn.isChecked = false
+        binding.mensLeagueBtn.isChecked = false
+        binding.coedLeagueBtn.isChecked = false
 
         player.league = "womens"
     }
 
     fun onCoedClicked(view: View){
-        mensLeagueBtn.isChecked = false
-        womensLeagueBtn.isChecked = false
+        binding.mensLeagueBtn.isChecked = false
+        binding.womensLeagueBtn.isChecked = false
 
         player.league = "co-ed"
     }

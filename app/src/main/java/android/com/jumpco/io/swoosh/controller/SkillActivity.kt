@@ -4,16 +4,17 @@ package android.com.jumpco.io.swoosh.controller
 
 import android.com.jumpco.io.swoosh.EXTRA_PLAYER
 import android.com.jumpco.io.swoosh.R
+import android.com.jumpco.io.swoosh.databinding.ActivitySkillBinding
 import android.com.jumpco.io.swoosh.model.Player
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_skill.*
 
 class SkillActivity : BaseActivity() {
 
     lateinit var player : Player
+    private lateinit var binding: ActivitySkillBinding
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -22,7 +23,9 @@ class SkillActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_skill)
+        binding = ActivitySkillBinding.inflate(layoutInflater) //initializing the binding class
+        setContentView(binding.root)
+
         player = intent.getParcelableExtra(EXTRA_PLAYER)!!
 
     }
@@ -36,11 +39,11 @@ class SkillActivity : BaseActivity() {
     }
 
     fun onBallerClick(view: View) {
-        beginnerSkillBtn.isChecked = false
+        binding.beginnerSkillBtn.isChecked = false
         player.skill = "baller"
     }
     fun onBeginnerClick(view: View){
-        ballerSkillBtn.isChecked = false
+        binding.ballerSkillBtn.isChecked = false
         player.skill = "beginner"
     }
 

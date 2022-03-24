@@ -1,17 +1,20 @@
 package android.com.jumpco.io.swoosh.controller
 
-import android.com.jumpco.io.swoosh.R
+import android.com.jumpco.io.swoosh.databinding.ActivitySkillBinding
+import android.com.jumpco.io.swoosh.databinding.ActivityWelcomeBinding
 import android.content.Intent
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_welcome.*
 
 class WelcomeActivity : BaseActivity() {
 
+    private lateinit var binding: ActivityWelcomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
+        binding = ActivityWelcomeBinding.inflate(layoutInflater) //initializing the binding class
+        setContentView(binding.root)
 
-        getStartedBtn.setOnClickListener{
+        binding.getStartedBtn.setOnClickListener{
             val leagueIntent = Intent(this, LeagueActivity::class.java)
             startActivity(leagueIntent)
         }
