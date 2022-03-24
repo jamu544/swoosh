@@ -1,15 +1,12 @@
 package android.com.jumpco.io.swoosh.controller
 
 import android.com.jumpco.io.swoosh.EXTRA_PLAYER
-import android.com.jumpco.io.swoosh.R
 import android.com.jumpco.io.swoosh.databinding.ActivityLeagueBinding
-import android.com.jumpco.io.swoosh.databinding.ActivitySkillBinding
 import android.com.jumpco.io.swoosh.model.Player
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
